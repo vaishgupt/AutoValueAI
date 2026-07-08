@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoValueAI</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen text-white overflow-x-hidden">
+
+    <!-- Background Glow -->
+
+    <div class="fixed top-0 left-0 w-72 h-72 bg-blue-500 rounded-full blur-[120px] opacity-20"></div>
+
+    <div class="fixed bottom-0 right-0 w-96 h-96 bg-purple-600 rounded-full blur-[150px] opacity-20"></div>
+
+    <div class="container mx-auto px-6 py-8 relative z-10">
+
+        <!-- Navbar -->
+
+        <nav class="flex justify-between items-center">
+
+            <h2 class="text-3xl font-bold">
+                🚗 AutoValueAI
+            </h2>
+
+            <div class="space-x-8 hidden md:block">
+
+                <a href="#" class="hover:text-blue-300 transition">Home</a>
+
+                <a href="#predict" class="hover:text-blue-300 transition">Predict</a>
+
+                <a href="#about" class="hover:text-blue-300 transition">About</a>
+
+            </div>
+
+        </nav>
+
+        <!-- Hero -->
+
+        <section class="grid lg:grid-cols-2 gap-12 items-center mt-16">
+
+            <div>
+
+                <h1 class="text-6xl font-bold leading-tight">
+
+                    AI Powered
+                    <br>
+                    Used Car Price
+                    <br>
+                    Prediction
+
+                </h1>
+
+                <p class="text-gray-300 mt-6 text-lg">
+
+                    Predict the resale value of your car instantly using
+                    Machine Learning powered by FastAPI &
+                    Scikit-Learn.
+
+                </p>
+
+                <div class="flex gap-6 mt-10">
+
+                    <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-5">
+
+                        <h2 class="text-3xl font-bold">
+
+                            ⚡1 sec
+
+                        </h2>
+
+                        <p class="text-gray-300">
+
+                            Prediction
+
+                        </p>
+
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-5">
+
+                        <h2 class="text-3xl font-bold">
+
+                            🤖 AI
+
+                        </h2>
+
+                        <p class="text-gray-300">
+
+                            ML Powered
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900"
+                    class="rounded-3xl shadow-2xl hover:scale-105 transition duration-500">
+
+            </div>
+
+        </section>
+
+        <!-- Features -->
+
+        <section class="grid md:grid-cols-3 gap-6 mt-20">
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8">
+
+                <h1 class="text-5xl">
+
+                    ⚡
+
+                </h1>
+
+                <h2 class="text-2xl font-semibold mt-5">
+
+                    Instant Prediction
+
+                </h2>
+
+                <p class="text-gray-300 mt-3">
+
+                    Get accurate used car prices within seconds.
+
+                </p>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8">
+
+                <h1 class="text-5xl">
+
+                    🤖
+
+                </h1>
+
+                <h2 class="text-2xl font-semibold mt-5">
+
+                    Machine Learning
+
+                </h2>
+
+                <p class="text-gray-300 mt-3">
+
+                    Built using Scikit-Learn regression models.
+
+                </p>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8">
+
+                <h1 class="text-5xl">
+
+                    📈
+
+                </h1>
+
+                <h2 class="text-2xl font-semibold mt-5">
+
+                    Accurate Estimation
+
+                </h2>
+
+                <p class="text-gray-300 mt-3">
+
+                    Trained on thousands of used car records.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Prediction Form -->
+
+        <section id="predict" class="mt-20">
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-10 shadow-2xl">
+
+                <h2 class="text-4xl font-bold text-center">
+
+                    🚗 Enter Car Details
+
+                </h2>
+
+                <p class="text-center text-gray-300 mt-3 mb-10">
+
+                    Fill the information below to predict resale price.
+
+                </p>
+
+                <form action="/predict" method="post">
+
+                    <div class="grid md:grid-cols-2 gap-6">
+
+                        <input type="text" name="name" placeholder="Car Name"
+                            class="p-4 rounded-xl bg-white/20 placeholder-gray-300">
+
+                        <input type="number" name="year" placeholder="Year"
+                            class="p-4 rounded-xl bg-white/20 placeholder-gray-300">
+
+                        <input type="number" name="km_driven" placeholder="KM Driven"
+                            class="p-4 rounded-xl bg-white/20 placeholder-gray-300">
+
+                        <select name="fuel" class="p-4 rounded-xl bg-white/20">
+                            <option class="text-black">Petrol</option>
+                            <option class="text-black">Diesel</option>
+                            <option class="text-black">CNG</option>
+                            <option class="text-black">LPG</option>
+                        </select>
+
+                        <select name="seller_type" class="p-4 rounded-xl bg-white/20">
+                            <option class="text-black">Individual</option>
+                            <option class="text-black">Dealer</option>
+                            <option class="text-black">Trustmark Dealer</option>
+                        </select>
+
+                        <select name="transmission" class="p-4 rounded-xl bg-white/20">
+                            <option class="text-black">Manual</option>
+                            <option class="text-black">Automatic</option>
+                        </select>
+
+                        <select name="owner" class="p-4 rounded-xl bg-white/20 md:col-span-2">
+                            <option class="text-black">First Owner</option>
+                            <option class="text-black">Second Owner</option>
+                            <option class="text-black">Third Owner</option>
+                            <option class="text-black">Fourth & Above Owner</option>
+                            <option class="text-black">Test Drive Car</option>
+                        </select>
+
+                    </div>
+
+                    <div class="text-center mt-10">
+
+                        <button id="predictBtn"
+                            class="bg-gradient-to-r from-blue-500 to-indigo-600 px-10 py-4 rounded-full text-lg font-semibold hover:scale-110 transition-all duration-300 shadow-xl">
+
+                            🚀 Predict Price
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- Prediction Result -->
+
+        {% if prediction %}
+
+        <section class="mt-16">
+
+            <div
+                class="bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl p-10 shadow-2xl text-center">
+
+                <h2 class="text-2xl">
+
+                    🎉 Estimated Selling Price
+
+                </h2>
+
+                <h1 class="text-6xl font-bold mt-5">
+
+                    ₹ {{ prediction }}
+
+                </h1>
+
+                <p class="mt-5">
+
+                    Prediction generated successfully
+
+                </p>
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+        <!-- Stats -->
+
+        <section id="about" class="grid md:grid-cols-4 gap-6 mt-20">
+
+            <div class="bg-white/10 rounded-3xl p-8 text-center">
+
+                <h2 class="text-5xl">🚗</h2>
+
+                <h3 class="text-3xl font-bold mt-4">4300+</h3>
+
+                <p class="text-gray-300">Cars</p>
+
+            </div>
+
+            <div class="bg-white/10 rounded-3xl p-8 text-center">
+
+                <h2 class="text-5xl">🤖</h2>
+
+                <h3 class="text-3xl font-bold mt-4">7</h3>
+
+                <p class="text-gray-300">Models</p>
+
+            </div>
+
+            <div class="bg-white/10 rounded-3xl p-8 text-center">
+
+                <h2 class="text-5xl">⚡</h2>
+
+                <h3 class="text-3xl font-bold mt-4">1 sec</h3>
+
+                <p class="text-gray-300">Prediction</p>
+
+            </div>
+
+            <div class="bg-white/10 rounded-3xl p-8 text-center">
+
+                <h2 class="text-5xl">🎯</h2>
+
+                <h3 class="text-3xl font-bold mt-4">62%</h3>
+
+                <p class="text-gray-300">R² Score</p>
+
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+
+        <footer class="mt-24 border-t border-white/20 py-10 text-center">
+
+            <h2 class="text-3xl font-bold">
+
+                🚗 AutoValueAI
+
+            </h2>
+
+            <p class="text-gray-400 mt-3">
+
+                AI Powered Used Car Price Prediction
+
+            </p>
+
+            <p class="text-gray-500 mt-6 text-sm">
+
+                Built with ❤️ using FastAPI • Scikit-Learn • Tailwind CSS
+
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script>
+
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function () {
+
+            const btn = document.getElementById("predictBtn");
+
+            btn.innerHTML = "⏳ Predicting...";
+
+            btn.disabled = true;
+
+        });
+
+    </script>
+
+</body>
+
+</html>
